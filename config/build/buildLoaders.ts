@@ -3,9 +3,10 @@ import { RuleSetRule } from 'webpack'
 import { BuildOptions } from './types/config'
 
 export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
-	const svgLoader = {
-		test: /\.svg$/,
-		use: ['@svgr/webpack'],
+	const typescriptLoader: RuleSetRule = {
+		test: /\.tsx?$/,
+		use: 'ts-loader',
+		exclude: /node_modules/,
 	}
 
 	const cssLoader: RuleSetRule = {
@@ -17,9 +18,7 @@ export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
 				options: {
 					modules: {
 						auto: (rPath: string) => rPath.endsWith('.module.scss'),
-						localIdentName: isDev
-							? '[path][name]__[local]'
-							: '[hash:base64:8]',
+						localIdentName: isDev ? '[name]__[local]' : '[hash:base64:8]',
 					},
 				},
 			},
@@ -27,11 +26,19 @@ export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
 		],
 	}
 
-	const typescriptLoader: RuleSetRule = {
-		test: /\.tsx?$/,
-		use: 'ts-loader',
-		exclude: /node_modules/,
+	const svgLoader = {
+		test: /\.svg$/,
+		use: ['@svgr/webpack'],
 	}
 
-	return [typescriptLoader, cssLoader, svgLoader]
+	const fileLoader = {
+		test: /\.(png|jpe?g|gif|woff2)$/i,
+		use: [
+			{
+				loader: 'file-loader',
+			},
+		],
+	}
+
+	return [typescriptLoader, cssLoader, svgLoader, fileLoader]
 }
