@@ -1,0 +1,31 @@
+.link {
+	width: max-content;
+	font-size: calc(min(0.875rem + 2 * ((100vw - 320px) / (1280 - 320)), 1rem));
+	text-decoration: none;
+	position: relative;
+	transition: color var(--hover-transit);
+	height: max-content;
+}
+.link::after {
+	content: '';
+	background-color: currentColor;
+	position: absolute;
+	bottom: -5%;
+	left: -13%;
+	right: -13%;
+	margin: auto;
+	width: 0%;
+	height: 5%;
+	transition: width var(--hover-transit);
+}
+
+.link:hover::after {
+	width: 100%;
+}
+
+.primary {
+	color: var(--primary-c);
+}
+.inverted {
+	color: var(--inverted-primary-c);
+}

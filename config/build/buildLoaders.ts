@@ -3,6 +3,11 @@ import { RuleSetRule } from 'webpack'
 import { BuildOptions } from './types/config'
 
 export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
+	const svgLoader = {
+		test: /\.svg$/,
+		use: ['@svgr/webpack'],
+	}
+
 	const cssLoader: RuleSetRule = {
 		test: /\.s[ac]ss$/i,
 		use: [
@@ -11,8 +16,10 @@ export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
 				loader: 'css-loader',
 				options: {
 					modules: {
-						auto: (rPath: string) => rPath.endsWith('.module.css'),
-						localIdentName: isDev ? '[path][name]__[local]' : '[hash:base64:8]',
+						auto: (rPath: string) => rPath.endsWith('.module.scss'),
+						localIdentName: isDev
+							? '[path][name]__[local]'
+							: '[hash:base64:8]',
 					},
 				},
 			},
@@ -26,5 +33,5 @@ export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
 		exclude: /node_modules/,
 	}
 
-	return [typescriptLoader, cssLoader]
+	return [typescriptLoader, cssLoader, svgLoader]
 }
