@@ -7,16 +7,16 @@ import s from './Navbar.module.scss'
 
 interface Props extends HTMLAttributes<HTMLElement> {}
 
-export function Navbar({ className }: Props) {
+export function Navbar({ className, ...props }: Props) {
 	const { t } = useTranslation()
 
 	return (
-		<nav className={getClsNames(s.navbar, [className])}>
+		<nav className={getClsNames(s.navbar, [className])} {...props}>
 			<ULink theme={ULinkTheme.INVERTED} to='/'>
-				{t(`main.title`)}
+				{t('main.title')}
 			</ULink>
 			<ULink theme={ULinkTheme.INVERTED} to='/about'>
-				{t(`about.title`)}
+				{t('about.title')}
 			</ULink>
 		</nav>
 	)

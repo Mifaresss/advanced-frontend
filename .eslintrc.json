@@ -1,0 +1,35 @@
+{
+	"root": true,
+	"extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
+	"parser": "@typescript-eslint/parser",
+	"parserOptions": { "project": ["./tsconfig.json"] },
+	"plugins": ["prettier", "@typescript-eslint"],
+	"rules": {
+		"@typescript-eslint/no-empty-interface": "off",
+		"prettier/prettier": [
+			"error",
+			{
+				"printWidth": 90,
+				"arrowParens": "avoid",
+				"semi": false,
+				"singleQuote": true,
+				"jsxSingleQuote": true,
+				"tabWidth": 3,
+				"useTabs": true,
+				"bracketSameLine": false,
+				"trailingComma": "all",
+				"endOfLine": "auto"
+			}
+		],
+		"eol-last": "warn",
+		"quotes": ["error", "single", { "avoidEscape": true }],
+		"no-duplicate-imports": "warn",
+		"object-curly-spacing": ["error", "always"],
+		"array-bracket-spacing": ["error", "never"],
+		"comma-spacing": "error",
+		"no-multiple-empty-lines": ["error", { "max": 1 }],
+		"no-trailing-spaces": "warn",
+		"object-shorthand": ["error", "always"],
+		"no-empty-pattern": "warn"
+	}
+}

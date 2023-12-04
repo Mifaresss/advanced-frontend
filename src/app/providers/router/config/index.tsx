@@ -3,8 +3,8 @@ import { Main } from '@/pages/Main'
 import { RouteProps } from 'react-router-dom'
 
 export enum AppRouters {
-	MAIN = "main",
-	ABOUT = "about",
+	MAIN = 'main',
+	ABOUT = 'about',
 }
 
 // type RoutePaths = Record<AppRouters, string>

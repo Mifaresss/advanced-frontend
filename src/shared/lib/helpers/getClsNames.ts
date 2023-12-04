@@ -1,7 +1,7 @@
 export function getClsNames(
 	cls: string,
 	additional: string[] = [],
-	mods: Record<string, boolean> = {}
+	mods: Record<string, boolean> = {},
 ): string {
 	return [
 		cls,
