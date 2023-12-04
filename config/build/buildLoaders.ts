@@ -3,6 +3,20 @@ import { RuleSetRule } from 'webpack'
 import { BuildOptions } from './types/config'
 
 export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
+	const babelLoader = {
+		test: /\.(m?js|tsx?)$/,
+		exclude: /node_modules/,
+		use: {
+			loader: 'babel-loader',
+			options: {
+				presets: [['@babel/preset-env', { targets: 'defaults' }]],
+				plugins: [
+					['i18next-extract', { locales: ['en', 'ru'], keyAsDefaultValue: true }],
+				],
+			},
+		},
+	}
+
 	const typescriptLoader: RuleSetRule = {
 		test: /\.tsx?$/,
 		use: 'ts-loader',
@@ -40,5 +54,10 @@ export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
 		],
 	}
 
-	return [typescriptLoader, cssLoader, svgLoader, fileLoader]
+	const yamlLoader = {
+		test: /\.ya?ml$/,
+		use: 'yaml-loader',
+	}
+
+	return [typescriptLoader, cssLoader, svgLoader, fileLoader, yamlLoader]
 }

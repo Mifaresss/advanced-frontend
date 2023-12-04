@@ -1,5 +1,5 @@
 import { useTheme } from '@/app/providers/Theme'
-import { getClassNames } from '@/shared/lib/helpers/getClassNames'
+import { getClsNames } from '@/shared/lib/helpers/getClsNames'
 import { HTMLAttributes } from 'react'
 import s from './ThemeSwitcher.module.scss'
 
@@ -11,7 +11,7 @@ export function ThemeSwitcher({ className }: Props) {
 	return (
 		<button
 			onClick={toggleTheme}
-			className={getClassNames(s.themeIcon, [s[theme], className])}
+			className={getClsNames(s.themeIcon, [s[theme], className])}
 		>
 			<svg
 				className={s.sunAndMoon}

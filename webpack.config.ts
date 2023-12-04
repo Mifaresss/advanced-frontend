@@ -1,7 +1,7 @@
+import path from 'path'
 import type { Configuration } from 'webpack'
 import { buildWebpackConfig } from './config/build/buildWebpackConfig'
 import { BuildEnv, BuildMode, BuildPaths } from './config/build/types/config'
-import path from 'path'
 
 export default (env: BuildEnv) => {
 	const paths: BuildPaths = {
@@ -9,6 +9,7 @@ export default (env: BuildEnv) => {
 		build: path.resolve(__dirname, 'build'),
 		html: path.resolve(__dirname, 'public', 'index.html'),
 		src: path.resolve(__dirname, 'src'),
+		public: path.resolve(__dirname, 'public'),
 	}
 
 	const mode: BuildMode = env.mode || 'development'

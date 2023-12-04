@@ -1,4 +1,4 @@
-import { getClassNames } from '@/shared/lib/helpers/getClassNames'
+import { getClsNames } from '@/shared/lib/helpers/getClsNames'
 import { Link, LinkProps } from 'react-router-dom'
 import s from './ULink.module.scss'
 
@@ -11,10 +11,14 @@ interface Props extends LinkProps {
 	theme?: ULinkTheme
 }
 
-export function ULink({ className, children, theme = ULinkTheme.PRIMARY, ...props }: Props) {
-
+export function ULink({
+	className,
+	children,
+	theme = ULinkTheme.PRIMARY,
+	...props
+}: Props) {
 	return (
-		<Link className={getClassNames(s.link, [className, s[theme]])} {...props}>
+		<Link className={getClsNames(s.link, [className, s[theme]])} {...props}>
 			{children}
 		</Link>
 	)

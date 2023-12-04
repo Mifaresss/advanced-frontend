@@ -1,6 +1,7 @@
 .navbar {
 	width: 100%;
-	height: 3.125rem;
+	background-color: var(--inverted-bg-c);
+	height: var(--navbar-height);
 	display: flex;
 	gap: 0.625rem;
 }

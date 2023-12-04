@@ -1,20 +1,24 @@
-import { getClassNames } from '@/shared/lib/helpers/getClassNames'
+import '@/shared/config/i18n/i18n'
+import { getClsNames } from '@/shared/lib/helpers/getClsNames'
 import { Navbar } from '@/widgets/Navbar'
-import { ThemeSwitcher } from '@/widgets/ThemeSwitcher'
+import { Sidebar } from '@/widgets/Sidebar/ui'
+import { Suspense } from 'react'
 import { AppRouter } from './providers/router/ui/AppRouter'
 import { useTheme } from './providers/Theme'
 import './styles/index.scss'
 
-interface Props {}
-
-export function App({}: Props) {
-	const { theme, toggleTheme } = useTheme()
+export function App() {
+	const { theme } = useTheme()
 
 	return (
-		<div className={getClassNames('app', [theme])}>
-			<ThemeSwitcher />
-			<Navbar />
-			<AppRouter />
-		</div>
+		<main className={getClsNames('app', [theme])}>
+			<Suspense fallback=''>
+				<Navbar />
+				<section className='main-content'>
+					<Sidebar />
+					<AppRouter />
+				</section>
+			</Suspense>
+		</main>
 	)
 }

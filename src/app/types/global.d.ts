@@ -15,3 +15,9 @@ declare module '*.svg' {
 	const SVG: React.VFC<React.SVGProps<SVGSVGElement>>
 	export default SVG
 }
+declare module '*.yml' {
+	const content: any
+	export default content
+}
+
+declare const _IS_DEV_: boolean

@@ -9,6 +9,7 @@ export function buildResolvers({ paths }: BuildOptions): ResolveOptions {
 		mainFiles: ['index'],
 		alias: {
 			'@': paths.src,
+			'@public': paths.public,
 		},
 	}
 }

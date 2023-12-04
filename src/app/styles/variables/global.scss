@@ -7,5 +7,12 @@
 	--font-size-l: 1.5rem;
 	--font-line-height-l: 2rem;
 
-	--hover-transit: .15s;
+	// =========== Transitions =========== //
+	--main-transit: 0.2s;
+	--hover-transit: 0.15s;
+
+	// =========== Sizes =========== //
+	--navbar-height: 3.5rem;
+	--sidebar-width: 18.75rem;
+	--sidebar-width-collapsed: 5rem;
 }
