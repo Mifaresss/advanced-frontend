@@ -5,9 +5,11 @@ export function getClsNames(
 ): string {
 	return [
 		cls,
-		...additional,
+		...additional.filter(Boolean),
 		Object.entries(mods)
 			.filter(([, v]) => v)
 			.map(([cls]) => cls),
-	].join(' ')
+	]
+		.join(' ')
+		.trim()
 }

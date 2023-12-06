@@ -1,6 +1,6 @@
 import { LangSwitcher } from '@/features/LangSwitcher'
 import { ThemeSwitcher } from '@/features/ThemeSwitcher'
-import { getClsNames } from '@/shared/lib/helpers/getClsNames'
+import { getClsNames } from '@/shared/lib/helpers/classNames/getClsNames'
 import { HTMLAttributes, useState } from 'react'
 import s from './Sidebar.module.scss'
 

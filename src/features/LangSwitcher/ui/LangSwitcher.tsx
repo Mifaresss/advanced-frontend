@@ -1,4 +1,4 @@
-import { getClsNames } from '@/shared/lib/helpers/getClsNames'
+import { getClsNames } from '@/shared/lib/helpers/classNames/getClsNames'
 import { HTMLAttributes } from 'react'
 import { useTranslation } from 'react-i18next'
 import s from './LangSwitcher.module.scss'

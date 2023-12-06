@@ -1,5 +1,5 @@
 import { useTheme } from '@/app/providers/Theme'
-import { getClsNames } from '@/shared/lib/helpers/getClsNames'
+import { getClsNames } from '@/shared/lib/helpers/classNames/getClsNames'
 import { HTMLAttributes } from 'react'
 import s from './ThemeSwitcher.module.scss'
 
