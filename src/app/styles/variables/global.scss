@@ -1,18 +1,16 @@
 :root {
-	--font-family-main: Calibri, sans-serif;
+  --font-family-main: calibri, sans-serif;
+  --font-size-m: 1rem;
+  --font-line-height-m: 1.5rem;
+  --font-size-l: 1.5rem;
+  --font-line-height-l: 2rem;
 
-	--font-size-m: 1rem;
-	--font-line-height-m: 1.5rem;
+  /* =========== Transitions =========== */
+  --main-transit: 0.2s;
+  --hover-transit: 0.15s;
 
-	--font-size-l: 1.5rem;
-	--font-line-height-l: 2rem;
-
-	// =========== Transitions =========== //
-	--main-transit: 0.2s;
-	--hover-transit: 0.15s;
-
-	// =========== Sizes =========== //
-	--navbar-height: 3.5rem;
-	--sidebar-width: 18.75rem;
-	--sidebar-width-collapsed: 5rem;
+  /* =========== Sizes =========== */
+  --navbar-height: 3.5rem;
+  --sidebar-width: 18.75rem;
+  --sidebar-width-collapsed: 5rem;
 }

@@ -4,11 +4,10 @@
 @import 'themes/dark';
 
 .app {
-	font-size: var(--font-size-m);
-	font-family: var(--font-family-main);
 	background-color: var(--bg-c);
 	color: var(--primary-c);
-
+	font-family: var(--font-family-main);
+	font-size: var(--font-size-m);
 	min-height: 100dvh;
 }
 
