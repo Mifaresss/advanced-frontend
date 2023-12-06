@@ -1,4 +1,4 @@
-import { getClsNames } from '@/shared/lib/helpers/getClsNames'
+import { getClsNames } from '@/shared/lib/helpers/classNames/getClsNames'
 import { Link, LinkProps } from 'react-router-dom'
 import s from './ULink.module.scss'
 

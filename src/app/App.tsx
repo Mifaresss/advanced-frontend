@@ -1,5 +1,5 @@
 import '@/shared/config/i18n/i18n'
-import { getClsNames } from '@/shared/lib/helpers/getClsNames'
+import { getClsNames } from '@/shared/lib/helpers/classNames/getClsNames'
 import { Navbar } from '@/widgets/Navbar'
 import { Sidebar } from '@/widgets/Sidebar/ui'
 import { Suspense } from 'react'

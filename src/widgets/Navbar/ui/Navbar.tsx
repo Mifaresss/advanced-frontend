@@ -1,4 +1,4 @@
-import { getClsNames } from '@/shared/lib/helpers/getClsNames'
+import { getClsNames } from '@/shared/lib/helpers/classNames/getClsNames'
 import { ULink } from '@/shared/ui'
 import { ULinkTheme } from '@/shared/ui/ULink/ULink'
 import { HTMLAttributes } from 'react'
