@@ -4,3 +4,5 @@ main:
    title: Главная
 about:
    title: О нас
+notFound:
+   title: Страница не найдена
