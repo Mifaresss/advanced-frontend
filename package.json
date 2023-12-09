@@ -16,6 +16,7 @@
 	"license": "ISC",
 	"devDependencies": {
 		"@babel/core": "^7.17.5",
+		"@babel/plugin-transform-runtime": "^7.23.4",
 		"@babel/preset-env": "^7.16.11",
 		"@babel/preset-react": "^7.16.7",
 		"@babel/preset-typescript": "^7.16.7",
@@ -59,6 +60,7 @@
 		"husky": "^7.0.0",
 		"identity-obj-proxy": "^3.0.0",
 		"jest": "^27.5.1",
+		"jest-transform-yaml": "^1.1.2",
 		"json-server": "^0.17.0",
 		"loki": "^0.28.1",
 		"mini-css-extract-plugin": "^2.5.3",

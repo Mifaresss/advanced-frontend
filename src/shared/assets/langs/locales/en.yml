@@ -7,4 +7,5 @@ notFound:
    title: Page not found
 error: Something went wrong
 reload: Reload page
-main.title: Main1
+sidebar:
+   toggle: Toggle sidebar
