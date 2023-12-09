@@ -3,7 +3,6 @@ import { RuleSetRule } from 'webpack'
 import { BuildOptions } from './types/config'
 
 export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	const babelLoader = {
 		test: /\.(m?js|tsx?)$/,
 		exclude: /node_modules/,
@@ -11,9 +10,9 @@ export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
 			loader: 'babel-loader',
 			options: {
 				presets: [['@babel/preset-env', { targets: 'defaults' }]],
-				plugins: [
-					['i18next-extract', { locales: ['en', 'ru'], keyAsDefaultValue: true }],
-				],
+				// plugins: [
+				// 	['i18next-extract', { locales: ['en', 'ru'], keyAsDefaultValue: true }],
+				// ],
 			},
 		},
 	}
@@ -60,5 +59,5 @@ export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
 		use: 'yaml-loader',
 	}
 
-	return [typescriptLoader, cssLoader, svgLoader, fileLoader, yamlLoader]
+	return [babelLoader, typescriptLoader, cssLoader, svgLoader, fileLoader, yamlLoader]
 }
