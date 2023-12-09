@@ -11,7 +11,7 @@ export function App() {
 	const { theme } = useTheme()
 
 	useEffect(() => {
-		throw new Error()
+		throw new Error('test')
 	}, [])
 
 	return (

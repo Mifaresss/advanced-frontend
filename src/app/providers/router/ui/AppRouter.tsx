@@ -5,9 +5,7 @@ import { Route, Routes } from 'react-router-dom'
 import { routeConfig } from '../config'
 import s from './AppRouter.module.scss'
 
-interface Props {}
-
-export function AppRouter({}: Props) {
+export function AppRouter() {
 	return (
 		<Routes>
 			{Object.values(routeConfig).map(({ element, ...otherProps }) => (
