@@ -3,6 +3,7 @@ import { RuleSetRule } from 'webpack'
 import { BuildOptions } from './types/config'
 
 export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	const babelLoader = {
 		test: /\.(m?js|tsx?)$/,
 		exclude: /node_modules/,

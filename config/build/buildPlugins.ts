@@ -22,6 +22,8 @@ export function buildPlugins({ paths, isDev }: BuildOptions): WebpackPluginInsta
 		}),
 		new HotModuleReplacementPlugin(),
 		new ReactRefreshWebpackPlugin(),
-		new BundleAnalyzerPlugin(),
+		new BundleAnalyzerPlugin({
+			openAnalyzer: false,
+		}),
 	]
 }
