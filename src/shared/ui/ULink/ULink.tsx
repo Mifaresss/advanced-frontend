@@ -7,8 +7,10 @@ export enum ULinkTheme {
 	INVERTED = 'inverted',
 }
 
-interface Props extends LinkProps {
-	theme?: ULinkTheme
+export namespace ULink {
+	export interface Props extends LinkProps {
+		theme?: ULinkTheme
+	}
 }
 
 export function ULink({
@@ -16,7 +18,7 @@ export function ULink({
 	children,
 	theme = ULinkTheme.PRIMARY,
 	...props
-}: Props) {
+}: Ulink.Props) {
 	return (
 		<Link className={getClsNames(s.link, [className, s[theme]])} {...props}>
 			{children}
