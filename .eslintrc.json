@@ -12,6 +12,7 @@
 	"plugins": ["prettier", "@typescript-eslint"],
 	"rules": {
 		"@typescript-eslint/no-empty-interface": "off",
+		"@typescript-eslint/no-namespace": "off",
 		"prettier/prettier": [
 			"error",
 			{
