@@ -1,6 +1,7 @@
+import { Theme } from '@/app/providers/theme'
+import { StyleDecorator } from '@/shared/config/storybook/decorators/StyleDecorator'
+import { ThemeDecorator } from '@/shared/config/storybook/decorators/ThemeDecorator'
 import { addDecorator } from '@storybook/react'
-import { StyleDecorator } from './decorators/StyleDecorator'
-import { ThemeDecorator } from './decorators/ThemeDecorator'
 
 const preview = {
 	parameters: {
@@ -12,6 +13,6 @@ const preview = {
 }
 
 addDecorator(StyleDecorator)
-addDecorator(ThemeDecorator)
+addDecorator(ThemeDecorator(Theme.DARK))
 
 export default preview
