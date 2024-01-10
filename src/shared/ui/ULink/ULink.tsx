@@ -7,8 +7,8 @@ export enum ULinkTheme {
 	INVERTED = 'inverted',
 }
 
-export namespace ULink {
-	export interface Props extends LinkProps {
+export declare namespace ULink {
+	interface Props extends LinkProps {
 		theme?: ULinkTheme
 	}
 }

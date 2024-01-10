@@ -3,10 +3,14 @@ import { getClsNames } from '@/shared/lib/helpers/classNames/getClsNames'
 import { HTMLAttributes } from 'react'
 import s from './ThemeSwitcher.module.scss'
 
-interface Props extends HTMLAttributes<HTMLElement> {}
+export declare namespace ThemeSwitcher {
+	interface Props extends HTMLAttributes<HTMLElement> {}
+}
 
-export function ThemeSwitcher({ className }: Props) {
+export function ThemeSwitcher({ className }: ThemeSwitcher.Props) {
 	const { theme, toggleTheme } = useTheme()
+
+	console.log('themeInComponent:', theme)
 
 	return (
 		<button
