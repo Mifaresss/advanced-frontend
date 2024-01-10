@@ -1,5 +1,6 @@
 import { RuleSetRule } from 'webpack'
 import { buildCssLoader } from './loaders/buildCssLoader'
+import { buildYamlLoader } from './loaders/buildYamlLoader'
 import { BuildOptions } from './types/config'
 
 export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
@@ -39,10 +40,7 @@ export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
 		],
 	}
 
-	const yamlLoader = {
-		test: /\.ya?ml$/,
-		use: 'yaml-loader',
-	}
+	const yamlLoader = buildYamlLoader()
 
 	return [babelLoader, typescriptLoader, cssLoader, svgLoader, fileLoader, yamlLoader]
 }

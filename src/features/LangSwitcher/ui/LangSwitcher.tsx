@@ -3,9 +3,11 @@ import { HTMLAttributes } from 'react'
 import { useTranslation } from 'react-i18next'
 import s from './LangSwitcher.module.scss'
 
-interface Props extends HTMLAttributes<HTMLButtonElement> {}
+export declare namespace LangSwitcher {
+	interface Props extends HTMLAttributes<HTMLButtonElement> {}
+}
 
-export function LangSwitcher({ className, ...props }: Props) {
+export function LangSwitcher({ className, ...props }: LangSwitcher.Props) {
 	const { t, i18n } = useTranslation()
 
 	const toggleLang = async () => {

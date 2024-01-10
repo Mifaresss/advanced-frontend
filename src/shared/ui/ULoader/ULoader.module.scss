@@ -1,20 +1,14 @@
-.wrapper {
-	flex: 1 1 auto;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
 .loader {
-	--color: var(--primary-c);
 	--size: 5rem;
+	--color: var(--primary-c);
 	--border-size: 0.7rem;
 
 	position: relative;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: 100%;
-	max-width: var(--size);
+	width: var(--size);
+	height: var(--size);
 }
 .loader:before,
 .loader:after {

@@ -1,6 +1,7 @@
 import path from 'path'
 import { Configuration } from 'webpack'
 import { buildCssLoader } from '../build/loaders/buildCssLoader'
+import { buildYamlLoader } from '../build/loaders/buildYamlLoader'
 
 type Props = { config: Configuration }
 export default ({ config }: Props): Configuration => {
@@ -20,7 +21,7 @@ export default ({ config }: Props): Configuration => {
 		},
 		module: {
 			...config.module,
-			rules: [...config.module.rules, buildCssLoader(true)],
+			rules: [...config.module.rules, buildCssLoader(true), buildYamlLoader()],
 		},
 	}
 }

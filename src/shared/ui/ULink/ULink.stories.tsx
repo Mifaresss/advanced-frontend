@@ -1,6 +1,5 @@
 import { InvertedBackgroundDecorator } from '@/shared/config/storybook/decorators/InvertedBackgroundDecorator'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
-import { BrowserRouter } from 'react-router-dom'
 import { ULink, ULinkTheme } from './ULink'
 
 export default {
@@ -9,11 +8,7 @@ export default {
 	argTypes: {},
 } as ComponentMeta<typeof ULink>
 
-const Template: ComponentStory<typeof ULink> = (args: ULink.Props) => (
-	<BrowserRouter>
-		<ULink {...args} />
-	</BrowserRouter>
-)
+const Template: ComponentStory<typeof ULink> = (args: ULink.Props) => <ULink {...args} />
 
 export const Primary = Template.bind({})
 const primaryArgs: ULink.Props = { children: 'Text', to: '/' }

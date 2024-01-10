@@ -5,9 +5,11 @@ import { HTMLAttributes, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import s from './Sidebar.module.scss'
 
-interface Props extends HTMLAttributes<HTMLDivElement> {}
+export declare namespace Sidebar {
+	interface Props extends HTMLAttributes<HTMLDivElement> {}
+}
 
-export function Sidebar({ className }: Props) {
+export function Sidebar({ className }: Sidebar.Props) {
 	const { t } = useTranslation()
 
 	const [collapsed, setCollapsed] = useState(false)
