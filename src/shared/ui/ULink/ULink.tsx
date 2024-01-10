@@ -18,7 +18,7 @@ export function ULink({
 	children,
 	theme = ULinkTheme.PRIMARY,
 	...props
-}: Ulink.Props) {
+}: ULink.Props) {
 	return (
 		<Link className={getClsNames(s.link, [className, s[theme]])} {...props}>
 			{children}

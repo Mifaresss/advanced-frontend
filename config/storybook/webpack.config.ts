@@ -10,8 +10,9 @@ export default ({ config }: Props): Configuration => {
 		...config,
 		resolve: {
 			...config.resolve,
-			modules: [srcPath, 'node_modules'],
+			modules: [...config.resolve.modules, srcPath, 'node_modules'],
 			alias: {
+				...config.resolve.alias,
 				'@': srcPath,
 				'@public': path.resolve(__dirname, '..', '..', 'public'),
 			},

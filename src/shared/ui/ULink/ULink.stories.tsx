@@ -15,12 +15,20 @@ const Template: ComponentStory<typeof ULink> = (args: ULink.Props) => (
 )
 
 export const Primary = Template.bind({})
-Primary.args = {
-	children: 'Text',
-}
+const primaryArgs: ULink.Props = { children: 'Text', to: '/' }
+Primary.args = primaryArgs
 
-export const Inverded = Template.bind({})
-Inverded.args = {
+const InvertedTemplate: ComponentStory<typeof ULink> = (args: ULink.Props) => (
+	<BrowserRouter>
+		<div style={{ backgroundColor: 'var(--inverted-bg-c)', padding: '1.5rem' }}>
+			<ULink {...args} />
+		</div>
+	</BrowserRouter>
+)
+export const Inverded = InvertedTemplate.bind({})
+const invertedArgs: ULink.Props = {
 	children: 'Text',
 	theme: ULinkTheme.INVERTED,
+	to: '/',
 }
+Inverded.args = invertedArgs

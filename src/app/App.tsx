@@ -4,7 +4,7 @@ import { Navbar } from '@/widgets/Navbar'
 import { Sidebar } from '@/widgets/Sidebar/ui'
 import { Suspense } from 'react'
 import { AppRouter } from './providers/router/ui/AppRouter'
-import { useTheme } from './providers/Theme'
+import { useTheme } from './providers/theme'
 import './styles/index.scss'
 
 export function App() {
