@@ -8,14 +8,24 @@ export default {
 	// The directory where Jest should store its cached dependency information
 	// cacheDirectory: "C:\\Users\\Mifares\\AppData\\Local\\Temp\\jest",
 
+	rootDir: '../../',
+	roots: ['<rootDir>'],
 	clearMocks: true,
 	testEnvironment: 'jsdom',
 	coveragePathIgnorePatterns: ['\\\\node_modules\\\\'],
-	moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx', 'json', 'node'],
+	moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx', 'json', 'node', 'yaml', 'yml'],
+	transform: {
+		'\\.[jt]sx?$': 'babel-jest',
+		'\\.ya?ml$': 'jest-transform-yaml',
+	},
 	moduleDirectories: ['node_modules'],
-	rootDir: '../../',
-	roots: ['<rootDir>'],
+	moduleNameMapper: {
+		'\\.s?css$': 'identity-obj-proxy',
+		'^@/(.*)$': '<rootDir>/src/$1',
+	},
 	testMatch: ['<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'],
+	setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
+	globals: { _IS_DEV_: false },
 
 	// Indicates whether the coverage information should be collected while executing the test
 	// collectCoverage: false,

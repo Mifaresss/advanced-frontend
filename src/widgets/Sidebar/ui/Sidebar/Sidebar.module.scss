@@ -1,24 +1,25 @@
 .sidebar {
-  background-color: var(--inverted-bg-c);
-  display: flex;
-  flex-direction: column;
-  height: calc(100dvh - var(--navbar-height));
-  padding: 1.25rem;
-  position: relative;
-  transition: width var(--main-transit);
-  width: var(--sidebar-width);
+	background-color: var(--inverted-bg-c);
+	color: var(--inverted-primary-c);
+	display: flex;
+	flex-direction: column;
+	height: calc(100dvh - var(--navbar-height));
+	padding: 1.25rem;
+	position: relative;
+	transition: width var(--main-transit);
+	width: var(--sidebar-width);
 }
 
 .collapsed {
-  width: var(--sidebar-width-collapsed);
+	width: var(--sidebar-width-collapsed);
 }
 
 .mainContent {
-  flex: 1 1 auto;
+	flex: 1 1 auto;
 }
 
 .switchers {
-  display: flex;
-  justify-content: center;
-  width: 100%;
+	display: flex;
+	justify-content: center;
+	width: 100%;
 }

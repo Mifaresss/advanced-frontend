@@ -1,21 +1,24 @@
+import { getClsNames } from '@/shared/lib/helpers/classNames/getClsNames'
+import { ULoader } from '@/shared/ui'
 import { Suspense } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import { routeConfig } from '../config'
+import s from './AppRouter.module.scss'
 
-interface Props {}
-
-export function AppRouter({}: Props) {
+export function AppRouter() {
 	return (
-		<Suspense fallback={<div>Loading...</div>}>
-			<Routes>
-				{Object.values(routeConfig).map(({ element, ...otherProps }) => (
-					<Route
-						key={otherProps.path}
-						{...otherProps}
-						element={<div className='page'>{element}</div>}
-					/>
-				))}
-			</Routes>
-		</Suspense>
+		<Routes>
+			{Object.values(routeConfig).map(({ element, ...otherProps }) => (
+				<Route
+					key={otherProps.path}
+					{...otherProps}
+					element={
+						<Suspense fallback={<ULoader className={getClsNames(s.pageLoader)} />}>
+							<div className='page'>{element}</div>
+						</Suspense>
+					}
+				/>
+			))}
+		</Routes>
 	)
 }

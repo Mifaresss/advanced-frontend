@@ -1,25 +1,20 @@
 import { About } from '@/pages/About'
 import { Main } from '@/pages/Main'
+import { NotFound } from '@/pages/NotFound'
 import { RouteProps } from 'react-router-dom'
 
 export enum AppRouters {
 	MAIN = 'main',
 	ABOUT = 'about',
+	NOT_FOUND = 'not-found',
 }
 
-// type RoutePaths = Record<AppRouters, string>
-// export const routePaths: RoutePaths = Object.fromEntries(
-// 	Object.entries(AppRouters).map(([_, value]) => [value, `/${value}`])
-// ) as RoutePaths
 export const routePaths: Record<AppRouters, string> = {
 	[AppRouters.MAIN]: '/',
 	[AppRouters.ABOUT]: '/about',
+	[AppRouters.NOT_FOUND]: '*',
 }
 
-// export const routeConfig = Object.values(AppRouters).map(route => ({
-// 	path: routePaths[route],
-// 	element: <div>{route}</div>,
-// }))
 export const routeConfig: Record<AppRouters, RouteProps> = {
 	[AppRouters.MAIN]: {
 		path: routePaths[AppRouters.MAIN],
@@ -28,5 +23,9 @@ export const routeConfig: Record<AppRouters, RouteProps> = {
 	[AppRouters.ABOUT]: {
 		path: routePaths[AppRouters.ABOUT],
 		element: <About />,
+	},
+	[AppRouters.NOT_FOUND]: {
+		path: routePaths[AppRouters.NOT_FOUND],
+		element: <NotFound />,
 	},
 }

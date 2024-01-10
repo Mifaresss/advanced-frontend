@@ -1,8 +1,14 @@
 {
 	"root": true,
-	"extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
+	"extends": [
+		"eslint:recommended",
+		"plugin:@typescript-eslint/recommended",
+		"plugin:storybook/recommended"
+	],
 	"parser": "@typescript-eslint/parser",
-	"parserOptions": { "project": ["./tsconfig.json"] },
+	"parserOptions": {
+		"project": ["./tsconfig.json"]
+	},
 	"plugins": ["prettier", "@typescript-eslint"],
 	"rules": {
 		"@typescript-eslint/no-empty-interface": "off",
@@ -22,12 +28,23 @@
 			}
 		],
 		"eol-last": "warn",
-		"quotes": ["error", "single", { "avoidEscape": true }],
+		"quotes": [
+			"error",
+			"single",
+			{
+				"avoidEscape": true
+			}
+		],
 		"no-duplicate-imports": "warn",
 		"object-curly-spacing": ["error", "always"],
 		"array-bracket-spacing": ["error", "never"],
 		"comma-spacing": "error",
-		"no-multiple-empty-lines": ["error", { "max": 1 }],
+		"no-multiple-empty-lines": [
+			"error",
+			{
+				"max": 1
+			}
+		],
 		"no-trailing-spaces": "warn",
 		"object-shorthand": ["error", "always"],
 		"no-empty-pattern": "warn"

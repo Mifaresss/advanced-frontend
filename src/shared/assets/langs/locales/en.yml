@@ -1,6 +1,11 @@
 lang: Русский
-
 main:
    title: Main
 about:
    title: About
+notFound:
+   title: Page not found
+error: Something went wrong
+reload: Reload page
+sidebar:
+   toggle: Toggle sidebar

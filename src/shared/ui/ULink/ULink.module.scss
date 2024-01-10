@@ -1,33 +1,33 @@
 .link {
-  font-size: calc(min(0.875rem + 2 * ((100vw - 320px) / (1280 - 320)), 1rem));
-  height: max-content;
-  position: relative;
-  text-decoration: none;
-  transition: color var(--hover-transit);
-  width: max-content;
+	font-size: calc(min(0.875rem + 2 * ((100vw - 320px) / (1280 - 320)), 1rem));
+	height: max-content;
+	position: relative;
+	text-decoration: none;
+	transition: color var(--hover-transit);
+	width: max-content;
 }
 
 .link::after {
-  background-color: currentcolor;
-  bottom: -5%;
-  content: "";
-  height: 5%;
-  left: -13%;
-  margin: auto;
-  position: absolute;
-  right: -13%;
-  transition: width var(--hover-transit);
-  width: 0%;
+	content: "";
+	background-color: currentcolor;
+	bottom: -5%;
+	height: 5%;
+	left: -13%;
+	margin: auto;
+	position: absolute;
+	right: -13%;
+	transition: width var(--hover-transit);
+	width: 0%;
 }
 
 .link:hover::after {
-  width: 100%;
+	width: 100%;
 }
 
 .primary {
-  color: var(--primary-c);
+	color: var(--primary-c);
 }
 
 .inverted {
-  color: var(--inverted-primary-c);
+	color: var(--inverted-primary-c);
 }

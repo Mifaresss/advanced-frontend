@@ -1,5 +1,6 @@
-import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import { RuleSetRule } from 'webpack'
+import { buildCssLoader } from './loaders/buildCssLoader'
+import { buildYamlLoader } from './loaders/buildYamlLoader'
 import { BuildOptions } from './types/config'
 
 export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
@@ -10,9 +11,9 @@ export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
 			loader: 'babel-loader',
 			options: {
 				presets: [['@babel/preset-env', { targets: 'defaults' }]],
-				plugins: [
-					['i18next-extract', { locales: ['en', 'ru'], keyAsDefaultValue: true }],
-				],
+				// plugins: [
+				// 	['i18next-extract', { locales: ['en', 'ru'], keyAsDefaultValue: true }],
+				// ],
 			},
 		},
 	}
@@ -23,22 +24,7 @@ export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
 		exclude: /node_modules/,
 	}
 
-	const cssLoader: RuleSetRule = {
-		test: /\.s[ac]ss$/i,
-		use: [
-			isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
-			{
-				loader: 'css-loader',
-				options: {
-					modules: {
-						auto: (rPath: string) => rPath.endsWith('.module.scss'),
-						localIdentName: isDev ? '[name]__[local]' : '[hash:base64:8]',
-					},
-				},
-			},
-			'sass-loader',
-		],
-	}
+	const cssLoader: RuleSetRule = buildCssLoader(isDev)
 
 	const svgLoader = {
 		test: /\.svg$/,
@@ -54,10 +40,7 @@ export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
 		],
 	}
 
-	const yamlLoader = {
-		test: /\.ya?ml$/,
-		use: 'yaml-loader',
-	}
+	const yamlLoader = buildYamlLoader()
 
-	return [typescriptLoader, cssLoader, svgLoader, fileLoader, yamlLoader]
+	return [babelLoader, typescriptLoader, cssLoader, svgLoader, fileLoader, yamlLoader]
 }

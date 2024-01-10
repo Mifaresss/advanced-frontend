@@ -1,0 +1,55 @@
+.loader {
+	--size: 5rem;
+	--color: var(--primary-c);
+	--border-size: 0.7rem;
+
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: var(--size);
+	height: var(--size);
+}
+.loader:before,
+.loader:after {
+	content: '';
+	position: absolute;
+	border-radius: 50%;
+	animation: pulsOut 1.8s ease-in-out infinite;
+	filter: drop-shadow(0 0 var(--border-size) rgba(255, 255, 255, 0.75));
+}
+.loader:before {
+	width: 100%;
+	padding-bottom: 100%;
+	box-shadow: inset 0 0 0 var(--border-size) var(--color);
+	animation-name: pulsIn;
+}
+.loader:after {
+	width: calc(100% - var(--border-size));
+	padding-bottom: calc(100% - var(--border-size));
+	box-shadow: 0 0 0 0 var(--color);
+}
+
+@keyframes pulsIn {
+	0% {
+		box-shadow: inset 0 0 0 var(--border-size) var(--color);
+		opacity: 1;
+	}
+	50%,
+	100% {
+		box-shadow: inset 0 0 0 0 var(--color);
+		opacity: 0;
+	}
+}
+
+@keyframes pulsOut {
+	0%,
+	50% {
+		box-shadow: 0 0 0 0 var(--color);
+		opacity: 0;
+	}
+	100% {
+		box-shadow: 0 0 0 1rem var(--color);
+		opacity: 1;
+	}
+}

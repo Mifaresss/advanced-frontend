@@ -1,9 +1,11 @@
-interface Props {}
+import { useTranslation } from 'react-i18next'
 
-export default function Main({}: Props) {
+export default function Main() {
+	const { t } = useTranslation()
+
 	return (
-		<div>
-			<h1>Main</h1>
-		</div>
+		<>
+			<h1>{t('main.title')}</h1>
+		</>
 	)
 }

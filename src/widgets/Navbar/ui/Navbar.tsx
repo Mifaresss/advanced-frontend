@@ -5,9 +5,11 @@ import { HTMLAttributes } from 'react'
 import { useTranslation } from 'react-i18next'
 import s from './Navbar.module.scss'
 
-interface Props extends HTMLAttributes<HTMLElement> {}
+export declare namespace Navbar {
+	interface Props extends HTMLAttributes<HTMLElement> {}
+}
 
-export function Navbar({ className, ...props }: Props) {
+export function Navbar({ className, ...props }: Navbar.Props) {
 	const { t } = useTranslation()
 
 	return (
