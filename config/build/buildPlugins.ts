@@ -11,7 +11,7 @@ import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 import { BuildOptions } from './types/config'
 
 export function buildPlugins({ paths, isDev }: BuildOptions): WebpackPluginInstance[] {
-	return [
+	const plugins: WebpackPluginInstance[] = [
 		new HtmlWebpackPlugin({
 			template: paths.html,
 		}),
@@ -20,10 +20,17 @@ export function buildPlugins({ paths, isDev }: BuildOptions): WebpackPluginInsta
 		new DefinePlugin({
 			_IS_DEV_: JSON.stringify(isDev),
 		}),
-		new HotModuleReplacementPlugin(),
-		new ReactRefreshWebpackPlugin(),
-		new BundleAnalyzerPlugin({
-			openAnalyzer: false,
-		}),
 	]
+
+	if (isDev) {
+		plugins.push(
+			new HotModuleReplacementPlugin(),
+			new ReactRefreshWebpackPlugin(),
+			new BundleAnalyzerPlugin({
+				openAnalyzer: false,
+			}),
+		)
+	}
+
+	return plugins
 }
